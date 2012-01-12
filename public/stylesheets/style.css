@@ -1,8 +1,47 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #ffccff;
+}
+#content {
+  margin: 10px auto;
+  width: 1024px;
+  text-align: center;
 }
 
-a {
-  color: #00B7FF;
+#left {
+  width: 195px;
+  float: left;
+  margin-left: 5px;
+  background-color: #ffcf40;
+}
+
+#main {
+  float: left;
+  margin-left: 5px;
+  width: 819px;
+}
+
+#foot {
+  clear: both;
+}
+
+.summary {
+  background-color: #ffcf40; 
+  text-align: left;
+}
+
+.summary .title {
+  padding: 5px 10px 5px 10px;
+}
+
+.title a {
+  font-size: larger;
+  font-weight: bold;
+  color: #a67c00; 
+}
+
+.summary .main {
+  font-size: medium;
+  background-color: #ffffff; 
+  padding: 5px;
+  margin: 0px 5px 5px 5px;
 }

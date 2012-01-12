@@ -1,7 +1,16 @@
-!!!
+!!!5
 html
   head
-    title= title
-    -for(var cnt = 0; cnt < listPage.csses.length; cnt ++)
-      link(rel='stylesheet', href='#{listPage.csses[cnt]}')
-  body!= body
+    title 【まとめ】まとめのまとめ
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8') 
+  body
+    #content
+      #head
+        include includes/head
+      #left
+        include includes/right
+      #main
+        !{body}
+      #foot
+        include includes/foot
