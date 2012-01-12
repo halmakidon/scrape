@@ -1,4 +1,6 @@
 h1= title
-p Welcome to #{title}
-- for(var i = 0; i < bloglist.length; i++)
-    div !{bloglist[i]}
+- for(var cnt = 0; cnt < listPage.size(); cnt++)
+  .summary
+    .title
+      a(href=listPage.getSummary(cnt).link)= listPage.getSummary(cnt).title
+    .main !{listPage.getSummary(cnt).body}

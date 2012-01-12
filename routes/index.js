@@ -30,11 +30,11 @@ var util = require('util'),
     newsokuParser = require('../newsokuParser');
 
 exports.index = function(req, res){
-  newsokuParser.getEntries('http://blog.livedoor.jp/insidears/', function(err, entries) {
+  newsokuParser.getListPage(function(err, listPage) {
     if (err) {
       throw err;
     }
-    res.render('index', { title: 'ニュー速VIP', bloglist: entries })
+    res.render('index', { title: 'ニュー速VIP', listPage: listPage })
   });
 }
 /*
