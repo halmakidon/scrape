@@ -1,16 +1,14 @@
 /*
  * リストページのデータを表す
  */
-
-exports.ListPage = ListPage;
 function ListPage() {
   this.summaries = [];
-  this.csses = null;
+  this.csses = [];
 }
 
 ListPage.prototype.size = function () {
   return this.summaries.length;
-}
+};
 
 // toString 主にデバッグ用
 ListPage.prototype.toString = function () {
@@ -20,7 +18,16 @@ ListPage.prototype.toString = function () {
     mergeTitle = mergeTitle + this.summaries[cnt].toString() + "\n\n";
   }
   return mergeTitle;
-}
+};
+// ListPageオブジェクトを結合する
+ListPage.prototype.concat = function(addListPage) {
+  // サマリーを結合
+  retListPage = new ListPage();
+  retListPage.summaries = this.summaries.concat(addListPage.summaries);
+  retListPage.csses = this.csses.concat(addListPage.csses);
+
+  return retListPage;
+};
 
 // サマリーを追加する
 ListPage.prototype.addSummary = function (summary) {
@@ -29,19 +36,17 @@ ListPage.prototype.addSummary = function (summary) {
   } else {
    throw new TypeError(); 
   }
-}
+};
 
 // サマリーを取得する
 ListPage.prototype.getSummary = function (cnt) {
   return this.summaries[cnt];
-}
+};
 
 
 /*
  * リストページの各サマリーを表す
  */  
-exports.Summary = Summary;
-
 function Summary (title, body, link) {
   this.title = title;
   this.body = body;
@@ -51,5 +56,10 @@ function Summary (title, body, link) {
 // toString
 Summary.prototype.toString = function () {
   return this.title + ' | ' + this.link + ' | ' + this.body;
-}
+};
 
+/*
+ * エクスポート
+ */
+exports.ListPage = ListPage;
+exports.Summary = Summary;
