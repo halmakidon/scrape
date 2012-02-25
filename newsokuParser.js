@@ -40,5 +40,5 @@ exports.getListPage = function(callback) {
             callback(null, listPage);
         }
     });
-}
+};
 

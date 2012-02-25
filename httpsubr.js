@@ -52,15 +52,13 @@ exports.convertCharset = function(response, buf) {
     case 'ascii':
     case 'utf-8':
         return buf.toString(charset);
-        break;
 
     default:
         var ic = new (iconv.Iconv)(charset, 'utf-8');
         var buf2 = ic.convert(buf);
         return buf2.toString('utf8');
-        break;
     }
-}
+};
 
 // 文字列ではなくBufferを返す版の
 // requestパッケージ (https://github.com/mikeal/node-utils) のrequest関数
